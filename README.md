@@ -16,6 +16,5 @@ And that's it.
 
 **Explications**
 
-- the pages with '_csv' use only the .csv file as a database
-- the other use the database
-
+- Configuration using the .csv file as a database is : all files with '_csv.php' + index_without_db.php
+- Configuration using a database : index.php + the regular name
