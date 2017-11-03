@@ -14,4 +14,8 @@ Each of attributes is linkable to another page with different informations liste
 
 And that's it.
 
-*For more fun, try to do the exact same thing without database but using only the .csv file, it was my challenge in first place, I'm still trying on that*
+**Explications**
+
+- the pages with '_csv' use only the .csv file as a database
+- the other use the database
+
