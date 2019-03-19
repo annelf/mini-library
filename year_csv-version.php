@@ -1,37 +1,39 @@
 <?php
-include('header.php');
-$annee = $_GET['annee'];
+include 'header.php';
+$year = $_GET['annee'];
 ?>
 
 <body>
 <div class="container">
-    <h2><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Voici tous les livres de l'année : <?php echo $annee ?></h2>
+    <h2><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Here all the books of
+        : <?php echo $year ?></h2>
     <div class="table-responsive-vertical shadow-z-1">
         <table id="table" class="table table-hover">
             <tbody>
-                <tr>
-                    <th>Auteur</th>
-                    <th>Titre</th>
-                </tr>
-                    <?php
-                    $ligne = 1;
-                    $books = array();
-                    $fic = fopen("./files/bibliotheque.csv", "r");
-                        while (($tab = fgetcsv($fic, 1024, ";")) !== FALSE) { // boucle dans chaque ligne du csv (boucle dans chaque livre)
-                            $num = count($tab);
-                            $ligne ++;
-                            for ($i=0; $i < 1; $i++) { // Boucle sur toutes les données du livre actuel (tous les tomes)
-                                if(in_array($annee, $tab, true)){
-                                    echo '<tr><td>' . utf8_encode($tab[0]) . '</td>'
-                                        . '<td>' . utf8_encode($tab[1]) . '</td></tr>';
-                                }
-                            }
-                        }
-                        fclose($fic);
-                    ?>
+            <tr>
+                <th>Name of book</th>
+                <th>Authors</th>
+            </tr>
+            <?php
+            $file = fopen("./files/bibliotheque.csv", "r");
+
+            // loop on each line of csv's file
+            while (($tab = fgetcsv($file, 1024, ";")) !== FALSE) {
+
+                // loop on all the datas from the chosen year
+                for ($i = 0; $i < 1; $i++) {
+                    if (in_array($year, $tab, true)) {
+                        echo '<tr><td>' . utf8_encode($tab[0]) . '</td>'
+                            . '<td>' . utf8_encode($tab[1]) . '</td></tr>';
+                    }
+                }
+            }
+            fclose($file);
+            ?>
             </tbody>
         </table>
-        <p style="font-size: 1.5em;">Pour retourner à la liste des livres, cliquer ici : <a href="index_without_db.php" ><span class="glyphicon glyphicon-menu-hamburger"></span></a></p>
+        <p style="font-size: 1.5em;">To return to the list click here : <a href="index_without_db.php"><span
+                        class="glyphicon glyphicon-menu-hamburger"></span></a></p>
     </div>
 </body>
 

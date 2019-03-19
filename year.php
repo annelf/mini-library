@@ -1,39 +1,39 @@
 <?php
-require('param.php');
-require('connexion.php');
-include('header.php');
-$annee = $_GET['annee'];
+require 'param.php';
+require 'connexion.php';
+include 'header.php';
+$year = $_GET['annee'];
 ?>
 <body>
 <div class="container">
-    <h2><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Voici tous les livres de l'année : <?php echo $annee ?></h2>
+    <h2><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Here the books for : <?php echo $year ?></h2>
     <div class="table-responsive-vertical shadow-z-1">
         <table id="table" class="table table-hover">
             <tbody>
             <tr>
-                <th>Auteur</th>
-                <th>Titre</th>
+                <th>Author</th>
+                <th>Title</th>
             </tr>
             <?php
             try {
-            $sql = "SELECT * FROM `bibliotheque` WHERE `annee` = $annee";
-            $req = $connexion->query($sql);
+            $sql = "SELECT * FROM `bibliotheque` WHERE `annee` = $year";
+            $query = $connexion->query($sql);
             $i = 0;
-            foreach ($req as $listeAnnee) {
+            foreach ($query as $listYears) {
             $i ++;
             ?>
             <tr>
-                <td><?php echo $listeAnnee['auteur'] ?></td>
-                <td><?php echo $listeAnnee['titre'] ?></td>
+                <td><?php echo $listYears['auteur'] ?></td>
+                <td><?php echo $listYears['titre'] ?></td>
             </tr>
             </tbody>
             <?php }
             } catch(Exception $e) {
-                die('Erreur');
+                die('Something went wrong');
             }
             ?>
         </table>
-        <p style="font-size: 1.5em;">Pour retourner à la liste des livres, cliquer ici : <a href="index.php" ><span class="glyphicon glyphicon-menu-hamburger"></span></a></p>
+        <p style="font-size: 1.5em;">To return to the list click here : <a href="index.php" ><span class="glyphicon glyphicon-menu-hamburger"></span></a></p>
         </p>
     </div>
 </body>

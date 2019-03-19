@@ -1,5 +1,5 @@
 <?php
-// ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
+// ** Réglages MySQL ** //
 /** Name of the database */
 define('DB_NAME', '');
 
