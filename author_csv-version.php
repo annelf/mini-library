@@ -6,7 +6,7 @@ $author = str_replace("+", " ", $encodedAuthor);
 
 <body>
 <div class="container">
-    <h2><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Author you chose : <?php echo $author ?></h2>
+    <h2><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Author you chose : <?= $author ?></h2>
     <div class="table-responsive-vertical shadow-z-1">
         <table id="table" class="table table-hover">
             <tbody>

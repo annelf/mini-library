@@ -6,7 +6,7 @@ $genre = str_replace("+", " ", $encodedGenre);
 
 <body>
 <div class="container">
-    <h2><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Here the literary genre you chose : <?php echo $genre ?></h2>
+    <h2><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Here the literary genre you chose : <?= $genre ?></h2>
     <div class="table-responsive-vertical shadow-z-1">
         <table id="table" class="table table-hover">
             <tbody>

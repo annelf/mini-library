@@ -7,7 +7,7 @@ $title = utf8_encode($encodedTitle);
 <body>
 <div class="container">
     <h2><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Here the book you chose
-        : <?php echo $title ?></h2>
+        : <?= $title ?></h2>
     <div class="table-responsive-vertical shadow-z-1">
         <table id="table" class="table table-hover">
             <tbody>

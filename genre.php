@@ -6,7 +6,7 @@ $genre = $_GET['genre'];
 ?>
 <body>
 <div class="container">
-    <h2><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Here the literary genre you chose : <?php echo $genre ?></h2>
+    <h2><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span> Here the literary genre you chose : <?= $genre ?></h2>
     <div class="table-responsive-vertical shadow-z-1">
         <table id="table" class="table table-hover">
             <tbody>
@@ -23,8 +23,8 @@ $genre = $_GET['genre'];
             $i++;
             ?>
             <tr>
-                <td><?php echo $listGenre['auteur'] ?></td>
-                <td><?php echo $listGenre['titre'] ?></td>
+                <td><?= $listGenre['auteur'] ?></td>
+                <td><?= $listGenre['titre'] ?></td>
             </tr>
             </tbody>
             <?php }
@@ -33,7 +33,7 @@ $genre = $_GET['genre'];
             }
             ?>
         </table>
-        <p style="font-size: 1.5em;">To return to the list click here : <a href="index.php"><span
+        <p style="font-size: 1.5em;">To return to the list click here : <a href="index-third-version.php"><span
                         class="glyphicon glyphicon-menu-hamburger"></span></a></p>
         </p>
     </div>
